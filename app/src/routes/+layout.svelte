@@ -1,16 +1,29 @@
 <script lang='ts'>
     import Logo from "$lib/components/Logo.svelte";
-import "../app.css";
-
+    import "../app.css";
 </script>
-<div class="navbar bg-base-100">
-    <div class="flex-1">
+
+<div class="navbar bg-base-200 justify-between">
+    <div class="">
       <a href="/" class="btn btn-ghost normal-case text-xl">
         <Logo />
       </a>
     </div>
+    <div class="flex w-1/2">
+        <input type="text" placeholder="Search Books" class="input input-bordered w-full" />
+        <button class="btn btn-primary inline ml-2">Search</button>
+    </div>
     <div class="flex-none">
-      <div class="dropdown dropdown-end">
+      <label for="my-drawer-4">
+        <div class="btn btn-ghost btn-circle drawer-content" >
+          <div class="indicator">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+            <span class="badge badge-sm indicator-item">8</span>
+          </div>
+        </div>
+      </label>
+
+      <!-- <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost btn-circle">
           <div class="indicator">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
@@ -26,7 +39,7 @@ import "../app.css";
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost btn-circle avatar">
           <div class="w-10 rounded-full">
@@ -44,6 +57,23 @@ import "../app.css";
           <li><a>Logout</a></li>
         </ul>
       </div>
+    </div>
+  </div>
+
+
+  <div class="drawer drawer-end z-10">
+    <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content">
+      <!-- Page content here -->
+      <!-- <label for="my-drawer-4" class="drawer-button btn btn-primary">Open drawer</label> -->
+    </div> 
+    <div class="drawer-side">
+      <label for="my-drawer-4" class="drawer-overlay"></label>
+      <ul class="menu p-4 w-80 h-full bg-base-200 text-base-content">
+        <!-- Sidebar content here -->
+        <li><a>Sidebar Item 1</a></li>
+        <li><a>Sidebar Item 2</a></li>
+      </ul>
     </div>
   </div>
 
